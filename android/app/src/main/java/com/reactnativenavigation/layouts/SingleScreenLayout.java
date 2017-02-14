@@ -12,6 +12,7 @@ import com.reactnativenavigation.events.ScreenChangedEvent;
 import com.reactnativenavigation.params.ContextualMenuParams;
 import com.reactnativenavigation.params.FabParams;
 import com.reactnativenavigation.params.ScreenParams;
+import com.reactnativenavigation.params.BaseScreenParams;
 import com.reactnativenavigation.params.SideMenuParams;
 import com.reactnativenavigation.params.SlidingOverlayParams;
 import com.reactnativenavigation.params.SnackbarParams;
@@ -104,6 +105,22 @@ public class SingleScreenLayout extends BaseLayout {
 
     @Override
     public boolean onBackPressed() {
+     /* 拦截代码 */
+            Screen sc = stack.peek(); // 这里面封装着从前端传进来的任何 参数. 但是只能获取到栈顶的
+            BaseScreenParams params = sc.getScreenParams();
+            String[] customBackScreen={"almond.BindCard","almond.Uploader","almond.ExpressApply","almond.OrderList","almond.BillList"};
+            for (int j = 0; j<customBackScreen.length; j++){
+                    String i = customBackScreen[j];
+            		if (params.screenId.equals(i)) {
+                        NavigationApplication.instance.getEventEmitter().sendNavigatorEvent(i,"backBtnPressed");
+                        return true;
+                    }
+
+            };
+
+
+        /* 拦截代码 */
+
         if (stack.handleBackPressInJs()) {
             return true;
         }
