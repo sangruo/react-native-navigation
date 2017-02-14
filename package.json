@@ -1,6 +1,6 @@
 {
-  "name": "react-native-navigation",
-  "version": "2.0.0-experimental.0",
+  "name": "react-native-navigation-fork",
+  "version": "0.0.4",
   "description": "React Native Navigation - truly native navigation for iOS and Android",
   "license": "MIT",
   "nativePackage": true,
@@ -15,7 +15,7 @@
   "readme": "https://github.com/wix/react-native-navigation#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wix/react-native-navigation.git"
+    "url": "https://github.com/sangruo/react-native-navigation.git"
   },
   "main": "src/index.js",
   "scripts": {
