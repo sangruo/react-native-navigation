@@ -105,10 +105,10 @@ public class SingleScreenLayout extends BaseLayout {
 
     @Override
     public boolean onBackPressed() {
-     /* 拦截代码 */
-            Screen sc = stack.peek(); // 这里面封装着从前端传进来的任何 参数. 但是只能获取到栈顶的
+     /*back*/
+            Screen sc = stack.peek(); 
             BaseScreenParams params = sc.getScreenParams();
-            String[] customBackScreen={"almond.BindCard","almond.Uploader","almond.ExpressApply","almond.OrderList","almond.BillList"};
+            String[] customBackScreen={"almond.BindCard","almond.Uploader","almond.ExpressApply","almond.ProductList"};
             for (int j = 0; j<customBackScreen.length; j++){
                     String i = customBackScreen[j];
             		if (params.screenId.equals(i)) {
@@ -117,10 +117,7 @@ public class SingleScreenLayout extends BaseLayout {
                     }
 
             };
-
-
-        /* 拦截代码 */
-
+        /*back*/
         if (stack.handleBackPressInJs()) {
             return true;
         }
