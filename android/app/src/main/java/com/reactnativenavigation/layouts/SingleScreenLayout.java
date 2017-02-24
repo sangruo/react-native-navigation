@@ -108,7 +108,7 @@ public class SingleScreenLayout extends BaseLayout {
      /*back*/
             Screen sc = stack.peek(); 
             BaseScreenParams params = sc.getScreenParams();
-            String[] customBackScreen={"almond.BindCard","almond.Uploader","almond.ExpressApply","almond.ProductList"};
+            String[] customBackScreen={"almond.BindCard","almond.Uploader","almond.ExpressApply","almond.ProductList","almond.Login"};
             for (int j = 0; j<customBackScreen.length; j++){
                     String i = customBackScreen[j];
             		if (params.screenId.equals(i)) {
